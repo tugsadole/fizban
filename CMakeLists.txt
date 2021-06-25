@@ -12,21 +12,7 @@ ELSE(CURL_FOUND)
 ENDIF(CURL_FOUND)
 
 
-ExternalProject_Add(
 
-  ${PROJECT_NAME} 
-  GIT_REPOSITORY https://github.com/dgoulet/torsocks.git
-  GIT_TAG origin/master
-  SOURCE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/deps/torsocks
-  PREFIX deps/torsocks
-  BUILD_IN_SOURCE 1
-  UPDATE_DISCONNECTED true
-  CONFIGURE_COMMAND ./autogen.sh
-  COMMAND ./configure --prefix=<INSTALL_DIR>
-  BUILD_COMMAND ${MAKE}
-  BUILD_BYPRODUCTS <INSTALL_DIR>/lib/${CMAKE_FIND_LIBRARY_PREFIXES}torsocks.a
-  INSTALL_COMMAND make install
-)
 
 add_subdirectory(main)
 add_subdirectory(crawler)
