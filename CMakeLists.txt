@@ -16,3 +16,4 @@ ENDIF(CURL_FOUND)
 
 add_subdirectory(main)
 add_subdirectory(crawler)
+add_subdirectory(crawler/torsocks_boost)
